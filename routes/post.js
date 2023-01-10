@@ -1,8 +1,11 @@
 const express = require('express')
 const router = express.Router()
 const Post = require('../models/Post')
+const postController = require("../controller/postController.js")
 var bodyParser = require('body-parser')
 var jsonParser = bodyParser.json();
+
+
 
 // http://localhost:5000/api/post (GET)
 router.get('/', async (req, res) => {
