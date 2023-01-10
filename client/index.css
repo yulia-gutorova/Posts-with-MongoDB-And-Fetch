@@ -35,23 +35,37 @@ h1, h2{
     box-shadow: 5px 10px #888888;
 }
 
-.content h2{
+/* .content h2{
     text-align: center;
-}
+} */
+
 
 .single-post.card-action{
     text-align: center;
 }
 
-.post-id-string{
-    display:none;
-}
 
 .post-content{
     white-space: pre-line;
     padding: 10px;
     background-color: rgb(248, 236, 214);
     box-shadow: 1px 1px #ccc9c9;
+}
+
+#card-title-link{
+    text-decoration: none;
+}
+
+.card-title{
+    font-size: 20px;
+    color: black;
+    transition: font-size , 0.5s;
+}
+
+.card-title:hover{
+    font-size: 22px;
+    color: rgb(250, 137, 99);
+    text-shadow: 2px 2px #1a1d20;   
 }
 
 .card-action{
@@ -63,7 +77,7 @@ button{
     background-color: rgb(138, 80, 9);
     color: white;
     height: 30px;
-    width: 100px;
+    width: 130px;
     cursor: pointer;
     border: none;
     border-radius: 10px;
@@ -75,7 +89,7 @@ button{
 }
 
 button:hover{
-    background-color: rgb(245, 142, 16);
+    background-color:  rgb(250, 137, 99);
     color: black;
 }
 

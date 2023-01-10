@@ -19,17 +19,17 @@ const card = function(post) {
   return `  
   <div class="single-post-wrapper">
     <div class="single-post">
-      <div class="content">
-        <h2 class="card-title">${post.title}</h2>
-        <p id='post-id-string'>${post._id}</p>
-        <p class='post-content'>${post.text}</p>
-        <p>${new Date(post.date).toLocaleDateString()}</p>
+      <a href="" onClick="return false" id="card-title-link"><h2 class="card-title">${post.title}</h2></a>
+      <div class="content" style="display: none;">        
+        <p class='post-content'>${post.text}</p>         
       </div>
+      <p>${new Date(post.date).toLocaleDateString()}</p>
       <hr>
       <div class="card-action">
+        <button class="show-content" data_id=${post._id}>Show content</button>
         <button class="get-this-post" data_id=${post._id}>Get only</button>
         <button class="update-this-post" data_id=${post._id}>Update</button>
-        <button class="delete-this-post" data_id=${post._id}>Delete</button>
+        <button class="delete-this-post" data_id=${post._id}>Delete</button>          
       </div>
     </div>
   </div> 
@@ -143,6 +143,7 @@ btnHeaderGetAll.addEventListener('click', async () =>{
     const btnsDeleteThisPost = document.getElementsByClassName('delete-this-post');
     const btnsGetThisPost = document.getElementsByClassName('get-this-post');
     const btnsUpdateThisPost = document.getElementsByClassName('update-this-post');
+    const btnsShowContent = document.getElementsByClassName('show-content');
 
     for (let button of btnsDeleteThisPost){
       button.addEventListener('click', deleteThisPost);
@@ -155,6 +156,11 @@ btnHeaderGetAll.addEventListener('click', async () =>{
     for (let button of btnsUpdateThisPost){
       button.addEventListener('click', updateThisPost);
     }
+
+    for (let button of btnsShowContent){
+      button.addEventListener('click', showContent);
+    }
+
   }
 }) 
 
@@ -244,6 +250,7 @@ async function getThisPost(event) {
   btnBack.addEventListener('click', ()=>{btnHeaderGetAll.click();});   
 }
 
+
 //-------- GET THIS POST -------- end
 
 //*************************************************************************** 
@@ -322,3 +329,31 @@ async function updateThisPost(event) {
   }
  
  //-------- DELETE THIS POST ---- end
+
+//*************************************************************************** 
+//------- SHOW CONTENT ANIMATION ----- 
+//*************************************************************************** 
+ async function showContent(event) {
+
+  let $jCurrentButton = $(this);
+ 
+  console.log($jCurrentButton);
+  //$jCurrentTitle.animate({fontSize: "22px"}, 1000 );
+  let $jParent = $jCurrentButton.parent(".card-action");
+  console.log($jParent);
+  let $jDivSibling = $jParent.siblings(".content");
+  console.log($jDivSibling);
+  let $jH2Sibling = $jParent.siblings("a");
+  console.log($jH2Sibling);
+   if ($jDivSibling.is(":hidden")){
+    $jDivSibling.show(2000);
+    $jCurrentButton.html("Hide content");
+  }
+  else {
+    //$jSibling.animate({opacity: "hide"}, "3000");
+    $jDivSibling.fadeOut(2000);
+    $jCurrentButton.html("Show content");
+  } 
+   
+}
+ //--- SHOW CONTENT ANIMATION --- end
