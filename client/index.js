@@ -38,7 +38,7 @@ const card = function(post) {
 
 const inputForm = function() { 
   return ` 
-  <form id="create-form"> 
+  <form id="create-form" style="display: none;"> 
     <div class="create-form-content">
       <h2>Create a new post</h2>
 
@@ -61,8 +61,8 @@ const inputForm = function() {
 
 const updateThisPostForm = function(data) { 
   return ` 
-  <form id="create-form"> 
-    <div class="create-form-content">
+  <form id="update-form"> 
+    <div class="update-form-content">
       <h2>Update post</h2>
 
       <div class="input-field">
@@ -85,12 +85,12 @@ const updateThisPostForm = function(data) {
 
 const getThisPostCard = function(data) { 
   return ` 
-  <form id="create-form"> 
-    <div class="content">
-        <h2 class="card-title">${data.post.title}</h2>
-        <p class='post-content'>${data.post.text}</p>
-        <p>${new Date(data.post.date).toLocaleDateString()}</p>
+  <form id="get-form" style="display: none;"> 
+    <h2 class="card-title">${data.post.title}</h2>
+    <div class="content" >      
+        <p class='post-content'>${data.post.text}</p>      
     </div>
+    <p>${new Date(data.post.date).toLocaleDateString()}</p>
     <hr>
     <div class="card-action">
       <button id="back-to-all-posts">Back</button>
@@ -174,7 +174,7 @@ btnHeaderGetAll.addEventListener('click', async () =>{
   console.log('CREATE a new post');
   $posts.innerHTML ='';
   $createPost.innerHTML = inputForm();
-  
+  $("#create-form").show(1000);
   const $form = document.querySelector('#create-form');
   const input = document.getElementById('title');
   const text = document.getElementById('text');
@@ -245,7 +245,7 @@ async function getThisPost(event) {
   console.log(data);
 
   $createPost.innerHTML = getThisPostCard(data);
-  
+  $("#get-form").show(1000);
   const btnBack = document.getElementById('back-to-all-posts');
   btnBack.addEventListener('click', ()=>{btnHeaderGetAll.click();});   
 }
@@ -338,14 +338,12 @@ async function updateThisPost(event) {
   let $jCurrentButton = $(this);
  
   console.log($jCurrentButton);
-  //$jCurrentTitle.animate({fontSize: "22px"}, 1000 );
+  
   let $jParent = $jCurrentButton.parent(".card-action");
-  console.log($jParent);
   let $jDivSibling = $jParent.siblings(".content");
-  console.log($jDivSibling);
-  let $jH2Sibling = $jParent.siblings("a");
-  console.log($jH2Sibling);
-   if ($jDivSibling.is(":hidden")){
+  let $jASibling = $jParent.siblings("a");
+  $jASibling.children("h2").animate({fontSize: "24px"}, 1000 );
+  if ($jDivSibling.is(":hidden")){
     $jDivSibling.show(2000);
     $jCurrentButton.html("Hide content");
   }
