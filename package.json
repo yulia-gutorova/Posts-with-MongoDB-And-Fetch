@@ -1,0 +1,31 @@
+{
+  "name": "posts-with-mongodb-and-fetch",
+  "version": "1.0.0",
+  "description": "Assignment in course communication over the Internet",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yulia-gutorova/Posts-with-MongoDB-And-Fetch.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yulia-gutorova/Posts-with-MongoDB-And-Fetch/issues"
+  },
+  "homepage": "https://github.com/yulia-gutorova/Posts-with-MongoDB-And-Fetch#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "helmet": "^6.0.1",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^6.8.3"
+  }
+}

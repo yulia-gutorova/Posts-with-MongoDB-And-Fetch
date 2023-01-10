@@ -1,0 +1,138 @@
+*{
+    box-sizing: border-box; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header{
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1, h2{
+    text-align: center;
+}
+
+.container{
+    /* background-color: aqua; */
+    margin: 0 50px 0 50px;
+}
+
+#posts{   
+    width: 80%;
+    margin: auto;
+}
+
+.single-post-wrapper{
+    background-color: rgb(148, 112, 239);
+    margin: 20px 10px 20px 10px
+}
+
+.single-post{
+    background-color: rgb(242, 229, 205);
+    padding: 10px 10px 30px 10px;
+    box-shadow: 5px 10px #888888;
+}
+
+/* .content h2{
+    text-align: center;
+} */
+
+
+.single-post.card-action{
+    text-align: center;
+}
+
+
+.post-content{
+    white-space: pre-line;
+    padding: 10px;
+    background-color: rgb(248, 236, 214);
+    box-shadow: 1px 1px #ccc9c9;
+}
+
+#card-title-link{
+    text-decoration: none;
+}
+
+.card-title{
+    font-size: 20px;
+    color: black;
+    transition: font-size , 0.5s;
+}
+
+.card-title:hover{
+    font-size: 22px;
+    color: rgb(250, 137, 99);
+    text-shadow: 2px 2px #1a1d20;   
+}
+
+.card-action{
+    text-align: center; 
+    margin-top: 20px;
+}
+
+button{
+    background-color: rgb(138, 80, 9);
+    color: white;
+    height: 30px;
+    width: 130px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    transition: background-color 1s;
+}
+
+.buttons button{
+   width: 150px; 
+}
+
+button:hover{
+    background-color:  rgb(250, 137, 99);
+    color: black;
+}
+
+#create-form, #update-form, #get-form{
+    width: 80%;
+    background-color: rgb(242, 229, 205);
+    padding: 10px 10px 30px 10px;
+    box-shadow: 5px 10px #888888;
+    margin: auto;
+}
+
+label {
+    /* Uniform size & alignment */
+    display: inline-block;
+    width: 90px;
+    text-align: left;
+}
+ 
+.input-field{
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    width: 80%;
+    height: 30px;
+    border: 1px solid #999;
+    margin-bottom: 20px;
+}
+
+textarea{
+    width: 80%;
+    height: 200px;
+    border: 1px solid #999;
+    margin-bottom: 20px;
+}
+  
+input:focus,
+textarea:focus {
+    border-color: #000;
+}
+
+.submit-form{
+    text-align: center;
+}
+  
