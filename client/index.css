@@ -93,7 +93,7 @@ button:hover{
     color: black;
 }
 
-#create-form{
+#create-form, #update-form, #get-form{
     width: 80%;
     background-color: rgb(242, 229, 205);
     padding: 10px 10px 30px 10px;
@@ -129,7 +129,6 @@ textarea{
   
 input:focus,
 textarea:focus {
-    /* Additional highlight for focused elements */
     border-color: #000;
 }
 
